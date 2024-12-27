@@ -1,0 +1,184 @@
+/* General Styling */
+.projects-container {
+  padding: 40px;
+  background-color: #fdfdfd;
+  font-family: "Arial", sans-serif;
+  color: #000;
+}
+
+.projects-header {
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.projects-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Projects List */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.project-item {
+  display: flex;
+  align-items: stretch; /* Ensure child elements stretch to the same height */
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  height: 100%; /* Set the height to fill its parent container */
+  min-height: 200px; /* Optional: Ensure a minimum height */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Text container */
+.project-info {
+  flex: 1; /* Allow flexible resizing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push content apart vertically */
+  max-width: 250px;
+  text-align: left;
+}
+.project-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.project-intro {
+  flex: 2;
+  max-width: 500px;
+  margin: 0 20px;
+  text-align: left; /* Center align the text */
+  font-size: 16px;
+  color: #333;
+}
+
+.project-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 500px; /* Optional: Control the maximum width */
+}
+
+.project-image {
+  max-width: stretch;
+  height: auto;
+  border-radius: 8px;
+  object-fit: fill; /* Ensures the image scales well without distortion */
+}
+
+.project-link {
+  flex: 1;
+  align-self: center;
+  text-align: right;
+  font-size: 1rem;
+  color: #000;
+}
+
+.project-link a {
+  color: #000;
+  text-decoration: none;
+  position: relative;
+}
+
+.project-link a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #000;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-link a:hover::after {
+  transform: scaleX(1.1);
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 20px;
+  }
+
+  .projects-header h1 {
+    font-size: 2rem;
+  }
+
+  .projects-header p {
+    font-size: 1rem;
+  }
+
+  /* Projects List */
+  .projects-list {
+    gap: 20px;
+  }
+
+  .project-item {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding-bottom: 30px; /* Add space between items */
+  }
+
+  /* Text container */
+  .project-info {
+    max-width: 100%; /* Allow full width */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .project-meta {
+    font-size: 0.8rem;
+  }
+
+  .project-intro {
+    max-width: 100%; /* Allow full width */
+    margin: 10px 0; /* Add spacing around the intro */
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .project-image-wrapper {
+    max-width: 100%; /* Allow full width for the image */
+    margin-bottom: 10px; /* Add spacing below the image */
+  }
+
+  .project-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure proper scaling */
+  }
+
+  .project-link {
+    align-self: flex-start; /* Align link to the left */
+    text-align: left;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,267 @@
+body {
+  background-color: #f1f1f1;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+.home {
+  background-color: #f7f7f7;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.left-text h1 {
+  font-size: 2rem;
+  margin-top: 0px;
+}
+.right-text {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures proper scaling */
+}
+
+.carousel .control-dots {
+  margin-top: 20px;
+}
+
+.carousel .control-dots .dot {
+  background-color: #333;
+}
+
+.carousel .control-arrow {
+  background: none;
+  color: #333;
+}
+
+.carousel .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Full height of the viewport */
+  background-color: #f7f7f7; /* Optional background */
+}
+
+.image-container {
+  width: 100%;
+  max-width: 800px; /* Adjust max width */
+  margin: 0 auto; /* Center the carousel */
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 500px; /* Adjust image size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any inline-block gaps */
+}
+
+.nav-back,
+.nav-next {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-back img,
+.nav-next img {
+  position: relative;
+  min-width: 125%;
+  height: auto;
+  pointer-events: none;
+}
+
+.nav-next img {
+  position: relative;
+  right: 150px; /* Adjust position */
+}
+
+.nav-text {
+  cursor: pointer; /* Make only the text clickable */
+  transition: color 0.3s ease;
+}
+
+.nav-text:hover {
+  scale: 1.1; /* Optional hover effect */
+  color: #555; /* Optional hover effect */
+}
+
+.footer {
+  margin-top: 100px;
+  background: transparent;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.services {
+  text-align: left;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.press {
+  margin-top: 20px;
+}
+
+.footer-info {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.footer-info p {
+  color: #333;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Add spacing between stacked elements */
+  }
+
+  .nav-back,
+  .nav-next {
+    display: none; /* Hide navigation buttons on mobile */
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 90%; /* Ensure the image scales properly */
+    height: auto;
+    object-fit: contain;
+  }
+  .slick-slider {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .slick-dots {
+    bottom: -15px; /* Adjust dot positioning */
+  }
+
+  .footer {
+    padding: 15px;
+    font-size: 14px; /* Adjust text size for readability */
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  position: relative;
+  max-width: 200px; /* Adjust width of the carousel */
+  margin: 0 auto; /* Center the carousel in its container */
+}
+.carousel-image {
+  margin: 0px;
+  max-width: 800px; /* Larger image size */
+  height: auto;
+  margin: 0 auto; /* Center the image */
+  object-fit: cover; /* Ensures proportional scaling */
+}
+.slick-dots {
+  position: absolute;
+  bottom: -30px; /* Move dots slightly below the carousel */
+  width: 100%;
+  text-align: center;
+}
+
+.slick-dots li button:before {
+  color: #000; /* Dot color */
+  font-size: 12px;
+}
+
+.slick-slider {
+  width: 100%;
+  height: auto; /* Ensure it adapts to the image */
+}
+
+.slick-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust the height */
+}

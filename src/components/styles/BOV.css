@@ -1,0 +1,145 @@
+/* General Styles */
+.bov-container {
+  font-family: "Arial", sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 800px;
+  color: #555;
+}
+
+/* Meta Section */
+.meta-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.meta-box {
+  background: #eaf3fa;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+}
+
+/* Process Section */
+.process-section {
+  margin-bottom: 40px;
+}
+
+.process-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.process-section p {
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Solution Section */
+.solution-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.solution-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.solution-section p {
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.solution-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0073e6;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.solution-button:hover {
+  background-color: #005bb5;
+}
+
+/* Slideshow Section */
+.slideshow-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures images scale proportionally */
+}
+
+.carousel .control-dots {
+  display: none; /* Hides slide indicators */
+}
+
+.carousel .control-arrow {
+  display: none; /* Hides navigation arrows */
+}
+
+/* Design */
+.design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.old-site {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.old-site img {
+  width: 45%;
+}

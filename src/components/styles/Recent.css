@@ -1,0 +1,116 @@
+/* General Layout */
+.artworks-page {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+/* Recent Pieces Section */
+.recent-pieces {
+  display: flex; /* Arrange Back, Artwork, and Next horizontally */
+  justify-content: center; /* Center the entire section */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 50px;
+  gap: 10px; /* Reduce spacing between items */
+  position: relative;
+}
+
+.recent-slide {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  position: relative;
+  justify-content: flex-end;
+  align-items: flex-end; /* Fixed */
+  text-align: center; /* Center the image and tag */
+}
+
+.recent-slide img {
+  max-width: 750px;
+  height: auto;
+}
+
+.recent-tag {
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000000;
+  border: solid 1px #e8e8e8;
+  padding: 35px;
+  display: inline-block; /* Keep it as a block below the image */
+  text-align: left;
+}
+
+.recent-tag h3 {
+  font-size: 25px;
+  margin: 0;
+}
+
+.recent-tag p {
+  font-size: 20px;
+  margin: 5px 0 0;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  background-color: transparent;
+  color: #000000;
+  font-size: 1.25rem;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  position: relative;
+}
+
+.nav-button:hover {
+  text-decoration: line-through;
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+.back-button {
+  margin-right: 10px; /* Pull closer to the artwork */
+}
+
+.next-button {
+  margin-left: 10px; /* Pull closer to the artwork */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .recent-pieces {
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Add spacing between items */
+  }
+
+  .recent-slide {
+    display: flex;
+    flex-direction: column; /* Stack image and tag vertically */
+    align-items: center;
+    text-align: center; /* Center-align everything */
+  }
+
+  .recent-slide img {
+    max-width: 100%; /* Adjust image to fit screen width */
+    height: auto;
+  }
+
+  .recent-tag {
+    margin-top: 10px; /* Add spacing below the image */
+    text-align: center; /* Center-align the tag text */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .nav-button {
+    margin: 10px; /* Add spacing between buttons */
+    font-size: 1rem; /* Adjust button size for smaller screens */
+    width: 100px; /* Ensure buttons are proportional */
+  }
+}

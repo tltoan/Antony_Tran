@@ -1,0 +1,150 @@
+/* Hamburger Menu */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation for the Hamburger Menu to become an "X" */
+.hamburger.open .bar:nth-child(1) {
+  background-color: white;
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+}
+
+.hamburger.open .bar:nth-child(3) {
+  background-color: white;
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Full-Screen Sliding Navigation Menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 100%; /* Start off-screen */
+  width: 100%;
+  height: 100%;
+  background-color: rgb(145, 11, 11);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.nav-menu.open {
+  left: 0; /* Slide in when menu is open */
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-menu ul li {
+  margin: 20px 0;
+}
+
+.nav-menu ul li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f39c12;
+  transition: width 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  color: #f39c12;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 71, 71, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+.nav-menu.open + .backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-menu {
+  opacity: 0;
+  transition:
+    left 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+.nav-menu.open {
+  opacity: 1;
+}
+
+/* Studio Logo */
+.studio-logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.studio-link {
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+}
+
+.studio-logo h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.studio-logo p {
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase; /* Ensure consistency */
+}
