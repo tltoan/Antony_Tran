@@ -14,7 +14,22 @@ body {
   justify-content: space-between;
   min-height: 100vh;
 }
-.left-text h1 {
+
+.right-text li {
+  list-style: none;
+}
+
+.right-text a {
+  font-size: 16px;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Optional: Inherit the color from the parent element */
+}
+.right-text a:hover {
+  color: #007bff;
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+li .left-text h1 {
   font-size: 2rem;
   margin-top: 0px;
 }

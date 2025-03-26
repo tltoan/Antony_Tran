@@ -3,10 +3,29 @@ import "./styles/Projects.css";
 import Navbar from "./Navbar";
 import appli from "../assets/Landing.png";
 import bov from "../assets/uncei.png";
+import coming from "../assets/workinprogress.png";
 import michelin from "../assets/michelin.png";
 import { Link } from "react-router-dom";
 
 const projects = [
+  {
+    title: "Sourcerer",
+    description: "Product Design",
+    year: "2025",
+    category: "Work in Progress",
+    image: coming,
+    link: "",
+    intro: "",
+  },
+  {
+    title: "Ainzpop",
+    description: "Creative E-commerce Solution",
+    year: "2025",
+    category: "February 2025",
+    image: coming,
+    link: "",
+    intro: "",
+  },
   {
     title: "Appli",
     description: "Job Application Platform",

@@ -15,7 +15,6 @@ const Appli = () => {
     <div className="case-study-page">
       <Navbar />
       {/* Hero Section */}
-      {/* Hero Section */}
       <header className="hero-section">
         <h1 className="project-title">Mejo 581: Appli</h1>
         <img src={protoype} alt="Appli Prototype" className="project-image" />

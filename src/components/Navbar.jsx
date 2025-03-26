@@ -48,6 +48,14 @@ const Navbar = () => {
             <Link to="/projects" onClick={() => setIsOpen(false)}>
               Projects
             </Link>
+          </li>{" "}
+          <li>
+            <a
+              href="https://www.ainzpop.site/"
+              target="_blank"
+              rel="noopener noreferrer">
+              AINZPOP
+            </a>
           </li>
         </ul>
       </div>

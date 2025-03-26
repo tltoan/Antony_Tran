@@ -30,6 +30,14 @@ const Home = () => {
           <Link to="/about" className="nav-link">
             ABOUT ME
           </Link>
+          <li>
+            <a
+              href="https://www.ainzpop.site/"
+              target="_blank"
+              rel="noopener noreferrer">
+              AINZPOP
+            </a>
+          </li>
         </div>
       </header>
 
@@ -48,7 +56,7 @@ const Home = () => {
               infiniteLoop={true} // Enable infinite looping
               useKeyboardArrows={false} // Disable keyboard navigation
               autoPlay={true} // Enable autoplay
-              interval={3000} // Set autoplay interval to 3000ms
+              interval={2000} // Set autoplay interval to 3000ms
               swipeable={true} // Allow swipe gestures
               emulateTouch={true}>
               <div>

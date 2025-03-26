@@ -81,7 +81,8 @@
 }
 
 .project-image {
-  max-width: stretch;
+  min-width: 500px;
+  min-height: 350px;
   height: auto;
   border-radius: 8px;
   object-fit: fill; /* Ensures the image scales well without distortion */
@@ -137,6 +138,18 @@
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align items to the left */
     padding-bottom: 30px; /* Add space between items */
+  }
+
+  .project-item {
+    display: flex;
+    align-items: stretch; /* Ensure child elements stretch to the same height */
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    height: 100%; /* Set the height to fill its parent container */
+    min-height: 200px; /* Optional: Ensure a minimum height */
+    min-width: 100%; /* Ensure the project item takes full width */
+    box-sizing: border-box; /* Include padding in height calculation */
   }
 
   /* Text container */
