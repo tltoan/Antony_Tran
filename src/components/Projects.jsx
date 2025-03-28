@@ -6,6 +6,7 @@ import bov from "../assets/uncei.png";
 import coming from "../assets/workinprogress.png";
 import michelin from "../assets/michelin.png";
 import { Link } from "react-router-dom";
+import ainzpop from "../assets/ainzpop.png";
 
 const projects = [
   {
@@ -14,7 +15,7 @@ const projects = [
     year: "2025",
     category: "Work in Progress",
     image: coming,
-    link: "",
+    link: "/void",
     intro: "",
   },
   {
@@ -22,9 +23,9 @@ const projects = [
     description: "Creative E-commerce Solution",
     year: "2025",
     category: "February 2025",
-    image: coming,
-    link: "",
-    intro: "",
+    image: ainzpop,
+    link: "https://www.ainzpop.site/",
+    intro: "Ainzpop envisions and executes an avant garde take on the clothing reselling business. Integrating various API’s to handle secure checkouts, focuses on user experience and website aesthetics. E.g: Stripe, nodemailer, Heroku, Mongodb, and others. Consists of a front-end from scratch using typescript and React and connecting certain front-end interfaces with backend data.",
   },
   {
     title: "Appli",
@@ -76,16 +77,18 @@ const Projects = () => (
             </p>
           </div>
           <div className="project-image-wrapper">
+            <a href = {project.link}>
             <img
               src={project.image}
               alt={project.title}
               className="project-image"
             />
+            </a>
           </div>
           <div className="project-intro">
             <p>{project.intro}</p>
           </div>
-          <Link to={project.link} className="project-link">
+          <Link to={project.link} className="project-link" >
             View Project
           </Link>
         </div>

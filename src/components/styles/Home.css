@@ -157,13 +157,17 @@ li .left-text h1 {
 }
 
 .press {
-  margin-top: 20px;
+  margin-top: 0px;
+  align-self: center;
+  align-content: center;
 }
 
 .footer-info {
   margin-top: 10px;
   font-size: 12px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-wrapper {
@@ -172,20 +176,24 @@ li .left-text h1 {
   gap: 10px;
 }
 
-.social-icons {
+.social-iconss {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: -22px;
+  opacity: .8;
 }
 
-.social-icons a {
+.social-iconss a {
   text-decoration: none;
   color: #333;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #007bff;
+.social-iconss a:hover {
+  color: #595b8a;
 }
 
 .nav-link {
@@ -196,7 +204,7 @@ li .left-text h1 {
 }
 
 .nav-link:hover {
-  color: blue;
+  color: #595b8a;
   text-decoration: underline;
 }
 

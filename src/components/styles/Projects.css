@@ -41,16 +41,20 @@
 
 /* Text container */
 .project-info {
-  flex: 1; /* Allow flexible resizing */
+  flex: 2; /* Allow flexible resizing */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Push content apart vertically */
   max-width: 250px;
   text-align: left;
+  max-width: 100%; /* Allow more space for content */
+  text-align: left;
+  overflow-wrap: break-word; /* Break long words if needed */
 }
 .project-title {
   font-size: 1.8rem;
   margin: 0;
+  word-wrap: break-word;
 }
 
 .project-description {
@@ -78,6 +82,13 @@
   display: flex;
   justify-content: flex-start;
   max-width: 500px; /* Optional: Control the maximum width */
+  opacity: .8;
+}
+
+.project-image-wrapper:hover {
+  opacity: 1;
+  transform: scale(1.01);
+  transition: all 0.3s ease;
 }
 
 .project-image {

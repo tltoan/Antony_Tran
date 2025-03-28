@@ -1,6 +1,6 @@
 /* Archive Section */
 .archive-section {
-  background-image: url("/Users/antony/Desktop/Antony_Tran/my-app/src/assets/archive.gif");
+  background-image: url("../../assets/archive.gif");
   margin-top: 50px;
   padding: 20px;
   text-align: center;

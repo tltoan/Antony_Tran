@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="studio-logo">
         <Link to="/" className="studio-link">
           <h1>ANTONY_TRAN</h1>
-          <p>STUDIO, 2025</p>
+          <p>PORTFOLIO, 2025</p>
         </Link>
       </div>
 

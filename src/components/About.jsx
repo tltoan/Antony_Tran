@@ -40,6 +40,42 @@ const About = () => {
         <div className="about-experience">
           <h3>EXPERIENCE</h3>
           <ul>
+          <li>
+              <strong>Development and Marketing Intern</strong> / UNC-Institute for the Environment, Hybrid September 2024 - Present
+              <p>
+              ●
+              Integrating and modernizing various APIs to enhance the functionality of the Institute's outdated website directories
+              ●
+              Redesigning the GiveUNC database to incorporate fintech integrations and automate processes using APIs
+              ●
+              Led digital transformation project for the Institute of the Environment of UNC Chapel Hill using Figma for wireframing and
+              Wordpress for prototype.
+              </p>
+            </li>
+            <li>
+              <strong>Web Developer</strong> / Daily Tar heel : 1898 Brand Studio, Chapel Hill January 2025 - Present
+              <p>
+              ● Web Development division of the Daily Tarheel, working with clients using Figma and hard code
+              ● Collaborating with cross-functional teams, including marketing and engineering to support startups and local businesses
+              ● Conducted market research and synthesized user feedback to enhance the web experience for the DTH's 30,000+ readers
+              </p>
+            </li>
+            <li>
+              <strong>UX and Web Development Apprentice</strong> / App Team, Chapel Hill January 2025 - Present
+              <p>
+              ● Streamlined the UI design and prototype, developing components and libraries in Figma, ensuring consistency across deliverables following UX design principles.
+              ● Conducted user research sessions to identify pain points, driving iterative design improvements and optimizing client satisfaction
+              ● Coordinating with back-end engineers to implement database and design functionalities cohesively
+              </p>
+            </li>
+            <li>
+              <strong>UX / Product Design Intern</strong> / Sourcerer AI, Remote May 2024 - February 2025
+              <p>
+              ● Co-led the end-to-end design and development of Sourcerer’s AI-powered procurement platform, following Agile methodology and user-centered design. ● Defined and executed product strategy in collaboration with engineering and AI teams, aligning design efforts in compliance with business goals to deliver three key product iterations in 12 months
+              ● Designed product-led onboarding flows, reducing customer churn by 15% and improving activation rates.
+              ● Created and designed mock-up, customer journey maps, case studies, and storyboards to guide the implementation of new features and functionalities. 
+              </p>
+            </li>
             <li>
               <strong>Creative Director</strong> / Halcyon Studios, November
               2024- Present

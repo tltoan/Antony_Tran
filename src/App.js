@@ -6,6 +6,7 @@ import Artworks from "./components/Artworks";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Appli from "./components/Appli";
+import Void from "./components/Void";
 import BOV from "./components/BOV";
 import Michelin from "./components/Michelin";
 import "./components/styles/Preloader.css";
@@ -50,6 +51,7 @@ function App() {
         <Route path="/artworks" component={Artworks} />
         <Route path="/about" component={About} />
         <Route path="/appli" component={Appli} />
+        <Route path="/void" component={Void} />
         <Route path="/bov" component={BOV} />
         <Route path="/michelin" component={Michelin} />
         <Route path="/projects" component={Projects} />
