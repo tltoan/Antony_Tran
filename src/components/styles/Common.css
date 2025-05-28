@@ -1,0 +1,32 @@
+/* Common.css - Universal styles for consistent typography across the portfolio */
+
+:root {
+  /* Ensure font variables are consistently available */
+  --font-sf: 'SF Compact Rounded', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Apply the SF font to all components by default */
+.app-container,
+.project-container,
+.artwork-container,
+.about-container,
+.sourcerer-container,
+.appli-container,
+.ainzpop-container,
+.cykle-container,
+.void-container,
+.bov-container,
+.michelin-container,
+.archive-container,
+.recent-container,
+div[class*="-page"],
+div[class*="-container"] {
+  font-family: var(--font-sf);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all text elements inherit the font */
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select, li, label {
+  font-family: inherit;
+}

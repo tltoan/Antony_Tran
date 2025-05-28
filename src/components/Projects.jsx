@@ -2,21 +2,29 @@ import React from "react";
 import "./styles/Projects.css";
 import Navbar from "./Navbar";
 import appli from "../assets/Landing.png";
-import bov from "../assets/uncei.png";
 import coming from "../assets/workinprogress.png";
-import michelin from "../assets/michelin.png";
 import { Link } from "react-router-dom";
 import ainzpop from "../assets/ainzpop.png";
+import cyklePlaceholder from "../assets/cykle-placeholder.png";
 
 const projects = [
+  {
+    title: "Cykle",
+    description: "Thrift Store Inventory Platform",
+    year: "2025",
+    category: "Startup Project",
+    image: cyklePlaceholder,
+    link: "/cykle",
+    intro: "A B2B platform connecting local thrift stores with nearby shoppers through a simple inventory management system.",
+  },
   {
     title: "Sourcerer",
     description: "Product Design",
     year: "2025",
     category: "Work in Progress",
     image: coming,
-    link: "/void",
-    intro: "",
+    link: "/sourcerer",
+    intro: "A work-in-progress product design project exploring new interfaces and interactions.",
   },
   {
     title: "Ainzpop",
@@ -24,8 +32,8 @@ const projects = [
     year: "2025",
     category: "February 2025",
     image: ainzpop,
-    link: "https://www.ainzpop.site/",
-    intro: "Ainzpop envisions and executes an avant garde take on the clothing reselling business. Integrating various API’s to handle secure checkouts, focuses on user experience and website aesthetics. E.g: Stripe, nodemailer, Heroku, Mongodb, and others. Consists of a front-end from scratch using typescript and React and connecting certain front-end interfaces with backend data.",
+    link: "/ainzpop",
+    intro: "An avant-garde approach to clothing resale, combining unique aesthetics with seamless e-commerce functionality.",
   },
   {
     title: "Appli",
@@ -34,28 +42,7 @@ const projects = [
     category: "UX Design",
     image: appli,
     link: "/appli",
-    intro:
-      "Appli was a project developed for my MEJO 581 course: User Experience Design. The goal of this project was to intro us into the UX field by exploring the processes of research, analysis, and prototyping. Spanning an entire semester, the project was structured into five key phases: Empathy, Design, Ideation, Prototyping, and Pitching. Throughout the project, we engaged with real users, conducted in-depth interviews, and transformed our insights into a high-fidelity prototype. The final phase involved pitching our solution to a panel of peers and receiving valuable feedback from a senior developer, which further enriched our learning experience.",
-  },
-  {
-    title: "Vietnam Michelin Guide",
-    description: "Travel Website",
-    year: "2024",
-    category: "Product Design + Code",
-    image: michelin,
-    link: "/michelin",
-    intro:
-      "This project was created for my MEJO 487 class: Intermediate Interactive Media. For the final project, we were tasked with developing a product of our choice, with the requirement that it be coded entirely from scratch using HTML, CSS, and JavaScript. Additionally, we had to integrate the Google Maps API and ensure the application was interactive.As a foodie who had recently traveled to Vietnam, I decided to create a Vietnamese Michelin food guide. This project not only allowed me to showcase hard-coding but also provided an opportunity to learn web scraping techniques to gather data directly from the web.",
-  },
-  {
-    title: "UNC-CH EI Board of Visitors",
-    description: "University Website",
-    year: "2020",
-    category: "Web Design/UX UI",
-    image: bov,
-    link: "/bov",
-    intro:
-      "This is an Internship Project for the Envionmental Institute at Chapel Hill. The goal of this project was to improve the old UNC EI-BOV site to a more modern and easier to navigate site. I focused on the users (the board members), asking myself what would a member on for this institute want in a website designed for them. I built this using CSS HTML, and Wordpress.The project was completed over the course of one semester.",
+    intro: "A user-centered job application platform designed to simplify the complex process of applying for entry-level positions.",
   },
 ];
 
@@ -71,24 +58,28 @@ const Projects = () => (
         <div key={index} className="project-item">
           <div className="project-info">
             <h2 className="project-title">{project.title}</h2>
-            <p className="project-description">{project.description}</p>
             <p className="project-meta">
               {project.year} · {project.category}
             </p>
+            <p className="project-description">{project.description}</p>
           </div>
           <div className="project-image-wrapper">
-            <a href = {project.link}>
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-            />
-            </a>
+            <Link to={project.link}>
+              {project.title === "Cykle" ? (
+                <div className="cykle-placeholder-image">
+                  <div className="placeholder-text">{project.title}</div>
+                </div>
+              ) : (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                />
+              )}
+            </Link>
           </div>
-          <div className="project-intro">
-            <p>{project.intro}</p>
-          </div>
-          <Link to={project.link} className="project-link" >
+
+          <Link to={project.link} className="project-link">
             View Project
           </Link>
         </div>

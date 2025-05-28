@@ -135,17 +135,23 @@
   text-decoration: none;
   color: #000;
   text-align: left;
+  display: block;
 }
 
 .studio-logo h1 {
   margin: 0;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 5px;
+  font-size: 2.8rem; /* Match home page size */
   font-weight: bold;
+  letter-spacing: 0.05em; /* Match home page letter spacing */
+  color: #000; /* Ensure consistent color */
+  font-family: var(--font-sf); /* Match home page font */
+  text-transform: uppercase; /* Match home page style */
 }
 
 .studio-logo p {
   margin: 0;
-  font-size: 14px;
-  text-transform: uppercase; /* Ensure consistency */
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }

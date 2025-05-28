@@ -1,6 +1,6 @@
 /* General Styles */
 .bov-container {
-  font-family: "Arial", sans-serif;
+  font-family: var(--font-sf);
   margin: 0 auto;
   max-width: 1200px;
   padding: 20px;
@@ -40,7 +40,8 @@
 }
 
 .meta-box {
-  background: #eaf3fa;
+  background-color: #000000;
+  color: #ffffff;
   padding: 20px;
   border-radius: 10px;
   font-weight: bold;

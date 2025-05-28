@@ -1,155 +1,1290 @@
 body {
-  background-color: #f1f1f1;
   margin: 0;
-  font-family: "Arial", sans-serif;
-  background-color: #f7f7f7;
+  font-family: var(--font-sf);
+  background-color: #ffffff;
   color: #000;
 }
 
 .home {
-  background-color: #f7f7f7;
-  overflow-x: hidden;
+  background-color: #ffffff;
+  overflow: hidden; /* Prevent all scrolling */
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  padding: 2rem;
+  position: fixed; /* Fixed position to prevent scrolling */
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+/* Layout Structure */
+.left-side, .right-side {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+.left-side {
+  padding-right: 2rem;
   justify-content: space-between;
-  min-height: 100vh;
 }
 
-.right-text li {
-  list-style: none;
-}
-
-.right-text a {
-  font-size: 16px;
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Optional: Inherit the color from the parent element */
-}
-.right-text a:hover {
-  color: #007bff;
-  text-decoration: underline; /* Optional: Add underline on hover */
-}
-
-li .left-text h1 {
-  font-size: 2rem;
-  margin-top: 0px;
-}
-.right-text {
-  z-index: 999;
+.right-side {
+  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-/* Carousel Styles */
-.carousel-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.carousel .slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Ensures proper scaling */
-}
-
-.carousel .control-dots {
-  margin-top: 20px;
-}
-
-.carousel .control-dots .dot {
-  background-color: #333;
-}
-
-.carousel .control-arrow {
-  background: none;
-  color: #333;
-}
-
-.carousel .control-arrow:hover {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.main {
-  display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh; /* Full height of the viewport */
-  background-color: #f7f7f7; /* Optional background */
+  padding: 2rem;
+  overflow: hidden;
 }
 
-.image-container {
-  width: 100%;
-  max-width: 800px; /* Adjust max width */
-  margin: 0 auto; /* Center the carousel */
-  display: flex;
-  justify-content: center;
-}
-
-.image-container img {
-  max-width: 500px; /* Adjust image size */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Remove any inline-block gaps */
-}
-
-.nav-back,
-.nav-next {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between image and text */
-  font-size: 18px;
+/* Portfolio Info Styles */
+.portfolio-info h1 {
+  font-size: 2.8rem; /* Increased from 2rem */
+  margin-bottom: 0.8rem; /* Slightly increased */
   font-weight: bold;
+  letter-spacing: 0.05em; /* Added for better readability */
+}
+
+.portfolio-info p {
+  margin-top: 0.8rem; /* Increased from 0.5rem */
+  font-size: 1.2rem; /* Increased from 0.9rem */
+  opacity: 0.9; /* Slightly more visible */
+  letter-spacing: 0.02em; /* Added for better readability */
+}
+
+/* Home Page Bio Section Styles */
+.home-bio-section {
+  margin: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+}
+
+.home-bio-heading {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+  color: #000;
+  font-family: var(--font-sf), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.home-name-underline {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #000;
+}
+
+.home-bio-text {
+  font-size: 1.7rem;
+  margin: 0.8rem 0;
+  font-weight: normal;
+  line-height: 1.4;
+  color: #000;
+  min-height: 1.5em;
+  font-family: var(--font-sf), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Typing animation styles */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Wiggle animation using CSS variables */
+@keyframes wiggleVar {
+  0%, 100% { --wiggle-x: 0px; --wiggle-y: 0px; }
+  25% { --wiggle-x: 3px; --wiggle-y: -2px; }
+  50% { --wiggle-x: -2px; --wiggle-y: 1px; }
+  75% { --wiggle-x: 1px; --wiggle-y: 3px; }
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: bold;
+  color: #000;
+  animation: blink 1s step-end infinite;
+  position: relative;
+  top: -1px;
+  display: inline-block; /* Ensure the cursor is properly displayed */
+}
+
+/* Product Designer Text - Larger */
+.designation {
+  margin-top: 2.5rem;  /* Slightly more top margin */
+  margin-bottom: 2rem;  /* Add bottom margin for better spacing */
+}
+
+.product, .designer {
+  font-size: 6.5rem;  /* Increased from 5rem */
+  line-height: 1.1;  /* Slightly more line height for better readability */
+  margin: 0;
+  font-weight: 800;  /* Slightly bolder */
+  letter-spacing: 0.3rem;  /* Increased letter spacing */
+  display: block;  /* Keep each word on its own line */
+  text-transform: uppercase;  /* Make it uppercase for more impact */
+  transform: translateZ(0);  /* Force hardware acceleration */
+  will-change: transform;  /* Optimize for animation */
+}
+
+.designer {
+  letter-spacing: 0.8rem;  /* More spacing for 'Designer' */
+  margin-top: -1.2rem;  /* Adjust vertical spacing */
+  position: relative;  /* For any potential pseudo-elements */
+}
+
+/* Add a subtle text shadow for better readability */
+.product {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.designer {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000; /* Ensure nav is on top of everything */
+  padding: 1rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+.main-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.3rem; /* Increased from 1rem */
+  font-weight: 500;
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Creative Drawing and Art Elements */
+.right-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.creative-drawing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; 
+}
+
+.art-element {
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.medea-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start; /* Changed from center to flex-start to move left */
+  align-items: center; /* Changed to center vertically */
+  z-index: 20; /* Higher than shapes (10) */
+  padding-left: 10%; /* Added padding to move away from the edge */
+  transform: translateX(150vw); /* Start off-screen for animation */
+  animation: flyInWithBounce 1.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.1s forwards; /* Bouncy animation with slight delay */
+  pointer-events: none; /* Don't interfere with clicks on shapes */
+}
+
+.shapes-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto; /* Changed to auto to capture mouse events */
+  z-index: 10; /* Lower than medea but higher than background */
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0; /* Start invisible */
+  --push-x: 0px;
+  --push-y: 0px;
+  --push-scale: 1;
+  --rotate-angle: 0deg;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.5s ease-out, 
+              filter 0.3s ease-out;
+  z-index: 10;
+  will-change: transform, opacity, filter;
+  pointer-events: auto;
+  cursor: pointer;
+  animation: spinIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, 
+             wiggle 4s ease-in-out infinite;
+  animation-delay: var(--delay, 0s), calc(var(--delay) + 1.2s);
+  transform: translate3d(var(--push-x), var(--push-y), 0) scale(var(--push-scale)) rotate(var(--rotate-angle));
+  transform-origin: center;
+}
+
+/* Base shape styles with animations */
+.shape {
+  /* Ensure smooth transitions for all animations */
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  opacity: 0; /* Start invisible */
+  animation: spinIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: var(--delay, 0s);
+  transform-origin: center;
+  pointer-events: auto;
+}
+
+/* Add continuous animations after the initial spin-in */
+.shape.animate-in {
+  animation: subtleSpin 6s ease-in-out infinite, wiggle 3s ease-in-out infinite;
+  animation-delay: 0s, 0s;
+  opacity: 1;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, filter;
+}
+
+/* Optimize performance for shapes */
+.shape * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none; /* Prevent pointer events on inner elements */
+}
+
+/* Ensure all shape types inherit the spin animation */
+.shape.star,
+.shape.heart,
+.shape.flower,
+.shape.circle,
+.shape.triangle,
+.shape.pentagon,
+.shape.diamond,
+.shape.squiggle {
+  animation: spinIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, 
+             subtleSpin 8s ease-in-out infinite, 
+             wiggle 4s ease-in-out infinite;
+  animation-delay: var(--delay, 0s), calc(var(--delay) + 1.2s), calc(var(--delay) + 1.2s);
+}
+
+/* Shape styles with more diversity */
+.shape.star {
+  background: currentColor;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  --transform-origin: center;
+  animation-duration: 5s;
+  --default-transform: none;
+}
+
+/* Star variations */
+.shape.star:nth-of-type(3n+1) {
+  clip-path: polygon(50% 0%, 65% 35%, 98% 35%, 70% 57%, 85% 91%, 50% 70%, 15% 91%, 30% 57%, 2% 35%, 35% 35%);
+  animation-duration: 6s;
+  --default-transform: rotate(0deg);
+}
+
+.shape.star:nth-of-type(3n+2) {
+  clip-path: polygon(50% 0%, 58% 30%, 100% 30%, 65% 55%, 75% 100%, 50% 75%, 25% 100%, 35% 55%, 0% 30%, 42% 30%);
+  animation-duration: 4.5s;
+  --default-transform: rotate(15deg);
+}
+
+.shape.heart {
+  background: currentColor;
+  clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+  --transform-origin: center bottom;
+  animation-duration: 6s;
+  --default-transform: none;
+}
+
+/* Heart variations */
+.shape.heart:nth-of-type(2n) {
+  --default-transform: scale(0.8) rotate(15deg);
+}
+
+.shape.heart:nth-of-type(3n) {
+  --default-transform: scale(0.9) rotate(-15deg);
+  animation-duration: 5.5s;
+}
+
+.shape.flower {
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px currentColor, 0 0 0 10px rgba(255, 255, 255, 0.2);
+  animation-duration: 7s;
+}
+
+/* Flower variations */
+.shape.flower:nth-of-type(2n) {
+  box-shadow: 0 0 0 3px currentColor, 0 0 0 7px currentColor, 0 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.shape.flower:nth-of-type(3n) {
+  box-shadow: 0 0 0 4px currentColor, 0 0 0 8px rgba(255, 255, 255, 0.2), 0 0 0 12px currentColor;
+  animation-duration: 5s;
+}
+
+.shape.circle {
+  background: currentColor;
+  border-radius: 50%;
+  animation-duration: 4.8s;
+}
+
+/* Circle variations */
+.shape.circle:nth-of-type(2n) {
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.shape.circle:nth-of-type(3n) {
+  border-radius: 40%;
+  animation-duration: 5.2s;
+}
+
+.shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 24px solid currentColor;
+  background: transparent;
+  animation-duration: 5.5s;
+}
+
+/* Triangle variations */
+.shape.triangle:nth-of-type(2n) {
+  --default-transform: rotate(180deg);
+}
+
+.shape.triangle:nth-of-type(3n) {
+  --default-transform: rotate(-30deg);
+  animation-duration: 6.5s;
+}
+
+.shape.pentagon {
+  background: currentColor;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  animation-duration: 6s;
+}
+
+/* Pentagon variations */
+.shape.pentagon:nth-of-type(2n) {
+  clip-path: polygon(50% 0%, 100% 30%, 90% 100%, 10% 100%, 0% 30%);
+}
+
+.shape.pentagon:nth-of-type(3n) {
+  clip-path: polygon(50% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation-duration: 5.8s;
+}
+
+/* Diamond variations */
+.shape.diamond {
+  background: #FF6B6B;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  --default-transform: rotate(45deg);
+}
+
+.shape.hexagon {
+  background: #5F27CD;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  --default-transform: rotate(0deg);
+}
+
+.shape.star {
+  background: #FF9FF3;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  --default-transform: none;
+}
+
+.shape.heart {
+  background: #FF7675;
+  clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+  --default-transform: none;
+}
+
+.shape.circle {
+  background: #48dbfb;
+  border-radius: 50%;
+  --default-transform: none;
+}
+
+.shape.triangle {
+  background: #1dd1a1;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  --default-transform: none;
+}
+
+.shape.cross {
+  background: #222f3e;
+  clip-path: polygon(20% 0%, 40% 0%, 40% 20%, 60% 20%, 60% 0%, 80% 0%, 80% 20%, 100% 20%, 100% 40%, 80% 40%, 80% 60%, 100% 60%, 100% 80%, 80% 80%, 80% 100%, 60% 100%, 60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%, 0% 60%, 20% 60%, 20% 40%, 0% 40%, 0% 20%, 20% 20%);
+  --default-transform: none;
+}
+
+.shape.pentagon {
+  background: #feca57;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  --default-transform: none;
+}
+
+.shape.blob {
+  background: #00b894;
+  border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+  --default-transform: none;
+}
+
+.shape.flower {
+  background: #fd79a8;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  --default-transform: none;
+}
+
+.shape.squiggle {
+  background: #00b894;
+  clip-path: polygon(10% 30%, 20% 10%, 40% 20%, 60% 10%, 80% 30%, 90% 50%, 80% 70%, 60% 80%, 40% 70%, 20% 80%, 10% 70%, 20% 50%, 10% 30%);
+  --default-transform: none;
+}
+
+.shape.moon {
+  background: #f6e58d;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  box-shadow: -10px 0 0 0 #fff inset;
+  --default-transform: none;
+}
+
+.shape.cloud {
+  background: #dff9fb;
+  clip-path: ellipse(60% 40% at 50% 60%);
+  --default-transform: none;
+}
+
+.shape.spiral {
+  background: #00b894;
+  clip-path: polygon(50% 0%, 60% 10%, 70% 20%, 80% 30%, 90% 50%, 80% 70%, 60% 80%, 40% 70%, 20% 50%, 30% 30%, 40% 20%, 50% 10%, 50% 0%);
+  --default-transform: none;
+}
+
+.shape.zigzag {
+  background: #636e72;
+  clip-path: polygon(0% 40%, 20% 60%, 40% 40%, 60% 60%, 80% 40%, 100% 60%, 100% 80%, 0% 80%);
+  --default-transform: none;
+}
+
+.shape.wave {
+  background: #00cec9;
+  clip-path: polygon(0% 60%, 10% 50%, 20% 60%, 30% 50%, 40% 60%, 50% 50%, 60% 60%, 70% 50%, 80% 60%, 90% 50%, 100% 60%, 100% 100%, 0% 100%);
+  --default-transform: none;
+}
+
+.shape.diamond:nth-of-type(2n) {
+  --default-transform: rotate(45deg) skewX(15deg);
+}
+
+.shape.diamond:nth-of-type(3n) {
+  --default-transform: rotate(30deg) skewY(-10deg);
+  animation-duration: 6.3s;
+}
+
+/* Hexagon variations */
+.shape.hexagon {
+  background: currentColor;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation-duration: 7s;
+}
+
+.shape.hexagon:nth-of-type(2n) {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 40%, 90% 100%, 10% 100%, 0% 40%);
+}
+
+.shape.hexagon:nth-of-type(3n) {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 60%, 70% 100%, 30% 100%, 0% 60%);
+  animation-duration: 6.8s;
+}
+
+/* Cross variations */
+.shape.cross {
+  background: currentColor;
+  clip-path: polygon(
+    20% 0%, 40% 0%, 40% 20%, 60% 20%, 60% 40%, 40% 40%, 40% 60%, 60% 60%, 60% 80%, 40% 80%, 40% 100%, 20% 100%, 20% 80%, 0% 80%, 0% 60%, 20% 60%, 20% 40%, 0% 40%, 0% 20%, 20% 20%
+  );
+  animation-duration: 5.7s;
+}
+
+.shape.cross:nth-of-type(2n) {
+  --default-transform: rotate(45deg);
+}
+
+.shape.cross:nth-of-type(3n) {
+  clip-path: polygon(
+    25% 0%, 75% 0%, 75% 25%, 100% 25%, 100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0% 75%, 0% 25%, 25% 25%
+  );
+  animation-duration: 6.2s;
+}
+
+/* Blob variations */
+.shape.blob {
+  background: currentColor;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: blob 8s ease-in-out infinite, wiggle 7s ease-in-out infinite;
+  animation-delay: 0s, calc(var(--delay, 0s) + 1.2s);
+}
+
+.shape.blob:nth-of-type(2n) {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob2 7s ease-in-out infinite, wiggle 6s ease-in-out infinite;
+  animation-delay: 0s, calc(var(--delay, 0s) + 1.2s);
+}
+
+.shape.blob:nth-of-type(3n) {
+  border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
+  animation: blob3 9s ease-in-out infinite, wiggle 5.5s ease-in-out infinite;
+  animation-delay: 0s, calc(var(--delay, 0s) + 1.2s);
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+  25% { border-radius: 50% 50% 40% 60% / 50% 60% 40% 50%; }
+  50% { border-radius: 40% 60% 50% 50% / 50% 50% 50% 60%; }
+  75% { border-radius: 50% 50% 60% 40% / 50% 40% 60% 50%; }
+}
+
+@keyframes blob2 {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 40% 60% 40% 60% / 70% 30% 50% 60%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  75% { border-radius: 60% 40% 60% 30% / 40% 50% 60% 40%; }
+}
+
+@keyframes blob3 {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; }
+  25% { border-radius: 70% 30% 50% 50% / 30% 60% 70% 40%; }
+  50% { border-radius: 50% 60% 30% 70% / 60% 40% 50% 40%; }
+  75% { border-radius: 30% 70% 60% 50% / 50% 30% 60% 70%; }
+}
+
+.shape.pink { color: #FF9FF3; }
+.shape.blue { color: #48dbfb; }
+.shape.red { color: #FF6B6B; }
+.shape.orange { color: #FF9F43; }
+.shape.yellow { color: #FECA57; }
+.shape.green { color: #1DD1A1; }
+.shape.purple { color: #5F27CD; }
+.shape.teal { color: #1abc9c; }
+
+.pink {
+  background-color: #FF80AB;
+}
+
+.blue {
+  background-color: #82B1FF;
+}
+
+.red {
+  background-color: #FF5252;
+}
+
+.orange {
+  background-color: #FFAB40;
+}
+
+.yellow {
+  background-color: #FFFF00;
+}
+
+.green {
+  background-color: #B9F6CA;
+}
+
+.purple {
+  background-color: #B388FF;
+}
+
+@keyframes flyInWithBounce {
+  0% { transform: translateX(150vw); opacity: 0; }
+  70% { transform: translateX(-20px); opacity: 1; }
+  85% { transform: translateX(10px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  }
+  25% { 
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.5));
+  }
+  75% { 
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+  }
+}
+
+/* Animation keyframes */
+@keyframes wiggle {
+  0%, 100% { 
+    transform: translate3d(var(--push-x, 0), var(--push-y, 0), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) - 5deg)) 
+               scale(1);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  }
+  15% { 
+    transform: translate3d(calc(var(--push-x, 0) + 5px), calc(var(--push-y, 0) - 3px), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) + 7deg)) 
+               scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+  }
+  30% {
+    transform: translate3d(calc(var(--push-x, 0) - 4px), calc(var(--push-y, 0) + 2px), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) - 8deg)) 
+               scale(0.98);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.7));
+  }
+  45% {
+    transform: translate3d(calc(var(--push-x, 0) + 3px), calc(var(--push-y, 0) + 4px), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) + 6deg)) 
+               scale(1.03);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+  }
+  60% {
+    transform: translate3d(calc(var(--push-x, 0) - 2px), calc(var(--push-y, 0) - 1px), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) - 7deg)) 
+               scale(0.99);
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.8));
+  }
+  75% { 
+    transform: translate3d(calc(var(--push-x, 0) + 3px), calc(var(--push-y, 0) + 2px), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) + 6deg)) 
+               scale(1.04);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+  }
+  90% {
+    transform: translate3d(calc(var(--push-x, 0) - 1px), calc(var(--push-y, 0) - 2px), 0) 
+               rotate(calc(var(--rotate-angle, 0deg) - 4deg)) 
+               scale(1.01);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+  }
+}
+
+@keyframes subtleSpin {
+  0%, 100% { 
+    --rotate-angle: -8deg;
+  }
+  50% { 
+    --rotate-angle: 8deg;
+  }
+}
+
+/* Apply animations to all shapes */
+.shape.animate-in {
+  animation: subtleSpin 8s ease-in-out infinite, wiggle 4s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes spinIn {
+  0% { 
+    opacity: 0;
+    transform: translate3d(var(--push-x), var(--push-y), 0) scale(0.2) rotate(-360deg);
+    filter: brightness(1.5) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+  }
+  30% {
+    opacity: 0.8;
+    transform: translate3d(var(--push-x), var(--push-y), 0) scale(1.3) rotate(180deg);
+  }
+  60% {
+    transform: translate3d(var(--push-x), var(--push-y), 0) scale(0.9) rotate(-90deg);
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  80% {
+    transform: translate3d(var(--push-x), var(--push-y), 0) scale(1.05) rotate(10deg);
+  }
+  100% { 
+    opacity: 1;
+    transform: translate3d(var(--push-x), var(--push-y), 0) scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  }
+}
+
+/* Continuous subtle spin for the wiggle effect */
+@keyframes subtleSpin {
+  0%, 100% { 
+    --rotate-angle: -1deg;
+  }
+  50% { 
+    --rotate-angle: 1deg;
+  }
+}
+
+/* Medea image with smooth animations */
+.medea-image {
+  padding-right: 15%;
+  max-width: 155%;
+  max-height: 90vh;
+  object-fit: contain;
+  opacity: 1;
+  transform-origin: center center;
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  
+  /* Initial animation */
+  animation: flyInFromRight 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             medeaFloat 10s ease-in-out infinite;
+  animation-delay: 0.2s, 1.7s;
+  
+  /* CSS variables for transforms */
+  --medea-scale: 1;
+  --medea-rotate: 0deg;
+  --medea-translate-x: 0px;
+  --medea-translate-y: 0px;
+  
+  /* Apply transforms with smooth transitions */
+  transform: 
+    scale3d(var(--medea-scale), var(--medea-scale), 1)
+    rotate(var(--medea-rotate))
+    translate3d(
+      var(--medea-translate-x, 0), 
+      var(--medea-translate-y, 0), 
+      0
+    );
+  
+  /* Smoother transitions */
+  transition: 
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.4s ease-out,
+    opacity 0.4s ease-out;
+}
+
+/* Enhanced floating animation */
+@keyframes medeaFloat {
+  0%, 100% {
+    transform: 
+      translate3d(
+        var(--medea-translate-x, 0), 
+        calc(var(--medea-translate-y, 0) - 5px), 
+        0
+      )
+      rotate(calc(var(--medea-rotate, 0) - 1deg))
+      scale(var(--medea-scale, 1));
+  }
+  50% {
+    transform: 
+      translate3d(
+        var(--medea-translate-x, 0), 
+        calc(var(--medea-translate-y, 0) + 10px), 
+        0
+      )
+      rotate(calc(var(--medea-rotate, 0) + 1deg))
+      scale(calc(var(--medea-scale, 1) * 1.005));
+  }
+}
+
+/* Hover effects */
+.medea-image:hover {
+  --medea-scale: 1.01;
+  filter: brightness(1.05) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+  transition: 
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.3s ease-out;
+}
+
+/* Shape animations with smoother transitions */
+.shape {
+  transition: 
+    transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: 
+    translate3d(
+      var(--push-x, 0), 
+      var(--push-y, 0), 
+      0
+    ) 
+    scale(var(--push-scale, 1));
+  pointer-events: none; /* Prevent shape from interfering with mouse events */
+}
+
+/* Ensure shapes don't cause repaints */
+.shape * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.shape {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  /* Store the default transform in a CSS variable */
+  --default-transform: none;
+  /* For the push effect, we'll use these variables */
+  --push-x: 0px;
+  --push-y: 0px;
+  --push-scale: 1;
+  /* Single transform rule that combines all transformations */
+  transform: var(--default-transform) translate(var(--push-x), var(--push-y)) scale(var(--push-scale));
+  transform-origin: var(--transform-origin, center);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, filter 0.3s ease-out;
+  z-index: 1;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  animation: flyInFromRight 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: calc(var(--delay, 0s) + 0.3s);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  transform-origin: center;
+  pointer-events: auto;
+}
+
+.shape:hover {
+  /* Use variables instead of direct transform */
+  --push-scale: 1.25;
+  opacity: 0.95;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) brightness(1.2);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+}
+
+/* Let JS handle ALL transform via CSS variables */
+.art-element:hover {
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255,255,255,0.8));
+  z-index: 10;
+}
+
+.art-element.animate-in {
+  /* Use variables for transforms set by JavaScript */
+  --art-translate-x: 0px;
+  --art-translate-y: 0px;
+  transform: translate(var(--art-translate-x), var(--art-translate-y));
+}
+
+/* Shape animations */
+.star-1, .star-3, .star-4, .star-5 {
+  animation: flyInFromRight 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.flower-1, .flower-2, .flower-3 {
+  animation: flyInFromRight 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.circle-1, .circle-2, .circle-3, .circle-4 {
+  animation: flyInFromRight 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.triangle, .squiggle, .diamond, .hexagon, .pentagon, .cross, .wave, .heart, .moon, .cloud, .spiral, .zigzag {
+  animation: flyInFromRight 0.8s ease-out forwards;
+  animation-delay: calc(0.1s * var(--i, 1));
+}
+
+/* Animate in when component mounts */
+.art-element.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
+}
+
+/* Add hover effect that pushes elements away from cursor */
+.art-element {
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.star-1 {
+  top: 10%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="%23D4AF37"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.star-2 {
+  top: 10%;
+  right: 10%;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="%23D4AF37"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flower-1 {
+  top: 5%;
+  right: 30%;
+  width: 70px;
+  height: 70px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 30, 100 30, 70 50 C100 70, 70 100, 50 70 C30 100, 0 70, 30 50 C0 30, 30 0, 50 0" fill="%2367C23A"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flower-2 {
+  bottom: 10%;
+  left: 10%;
+  width: 65px;
+  height: 65px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 30, 100 30, 70 50 C100 70, 70 100, 50 70 C30 100, 0 70, 30 50 C0 30, 30 0, 50 0" fill="%23E74C3C"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sun {
+  bottom: 50%;
+  left: 60%;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="%230000FF"/><path d="M50 0 L50 20 M50 80 L50 100 M0 50 L20 50 M80 50 L100 50 M15 15 L30 30 M70 70 L85 85 M15 85 L30 70 M70 30 L85 15" stroke="%230000FF" stroke-width="5"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+/* New shape styles */
+.circle-1 {
+  bottom: 20%;
+  right: 15%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #3498db;
+  opacity: 0.7;
+}
+
+.circle-2 {
+  top: 15%;
+  left: 70%;
+  width: 50px;
+  height: 50px;
+  border: 2px dashed #6a5acd;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.triangle {
+  bottom: 15%;
+  left: 70%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #e67e22;
+  opacity: 0.8;
+}
+
+.squiggle {
+  top: 80%;
+  left: 30%;
+  width: 80px;
+  height: 25px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50"><path d="M0,25 Q25,0 50,25 T100,25 T150,25 T200,25" stroke="%2322aa88" fill="none" stroke-width="2"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+}
+
+.diamond {
+  top: 40%;
+  right: 10%;
+  width: 35px;
+  height: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="%23FF6B6B" opacity="0.7"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  --default-transform: rotate(45deg);
+  opacity: 0.8;
+}
+
+.hexagon {
+  top: 80%;
+  right: 10%;
+  width: 35px;
+  height: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L90 25 L90 75 L50 100 L10 75 L10 25 Z" fill="%239B59B6" opacity="0.7"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* New shapes */
+.heart {
+  top: 15%;
+  right: 15%;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 90 L20 60 C5 45 15 20 35 20 C45 20 50 25 50 30 C50 25 55 20 65 20 C85 20 95 45 80 60 Z" fill="%23FF6B8B"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.moon {
+  top: 20%;
+  left: 15%;
+  width: 45px;
+  height: 45px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M75 50 C75 64 64 75 50 75 C36 75 25 64 25 50 C25 36 36 25 50 25 C54 15 60 10 60 10 C40 15 25 30 25 50 C25 70 40 85 60 90 C60 90 54 85 50 75 C64 75 75 64 75 50 Z" fill="%23F1C40F"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cloud {
+  top: 15%;
+  right: 25%;
+  width: 60px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"><path d="M80 40 C90 40 95 35 95 30 C95 25 90 20 80 20 C80 10 70 5 60 5 C50 5 40 10 40 20 C25 20 15 30 15 40 C15 50 25 55 30 55 L80 55 C90 55 95 50 95 45 C95 40 90 40 80 40 Z" fill="%23ECF0F1"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.spiral {
+  bottom: 20%;
+  left: 20%;
+  width: 50px;
+  height: 50px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 C30 10 10 30 10 50 C10 70 30 90 50 90 C70 90 90 70 90 50 C90 30 70 10 50 10 Z M50 80 C35 80 20 65 20 50 C20 35 35 20 50 20 C65 20 80 35 80 50 C80 65 65 80 50 80 Z" fill="none" stroke="%2327AE60" stroke-width="3"/><path d="M50 30 C40 30 30 40 30 50 C30 60 40 70 50 70 C60 70 70 60 70 50 C70 40 60 30 50 30 Z" fill="none" stroke="%2327AE60" stroke-width="3"/><path d="M50 40 C45 40 40 45 40 50 C40 55 45 60 50 60 C55 60 60 55 60 50 C60 45 55 40 50 40 Z" fill="%2327AE60"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.zigzag {
+  top: 70%;
+  right: 25%;
+  width: 80px;
+  height: 25px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50"><path d="M0,10 L20,40 L40,10 L60,40 L80,10 L100,40 L120,10 L140,40 L160,10 L180,40 L200,10" stroke="%23E67E22" fill="none" stroke-width="3"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pentagon {
+  top: 20%;
+  right: 20%;
+  width: 45px;
+  height: 45px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 40 L80 90 L20 90 L0 40 Z" fill="%239B59B6" opacity="0.7"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cross {
+  bottom: 25%;
+  left: 25%;
+  width: 30px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L80,80 M80,20 L20,80" stroke="%23E74C3C" stroke-width="10" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.wave {
+  top: 60%;
+  left: 15%;
+  width: 70px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50"><path d="M0,25 C30,-10 70,60 100,25 C130,-10 170,60 200,25" stroke="%233498DB" fill="none" stroke-width="3"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.star-3 {
+  top: 85%;
+  left: 20%;
+  width: 30px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L55 30 L80 20 L60 40 L70 60 L50 50 L30 60 L40 40 L20 20 L45 30 Z" fill="%23F1C40F"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.star-4 {
+  top: 30%;
+  right: 30%;
+  width: 25px;
+  height: 25px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="%23D4AF37"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.star-5 {
+  bottom: 40%;
+  right: 15%;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="%23D4AF37"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flower-3 {
+  bottom: 20%;
+  right: 20%;
+  width: 50px;
+  height: 50px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 30, 100 30, 70 50 C100 70, 70 100, 50 70 C30 100, 0 70, 30 50 C0 30, 30 0, 50 0" fill="%23E67E22"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.circle-3 {
+  top: 30%;
+  left: 10%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #3498DB;
+  opacity: 0.7;
+}
+
+.circle-4 {
+  bottom: 30%;
+  right: 10%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #9B59B6;
+  opacity: 0.7;
+}
+
+/* Footer Styles */
+.footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
   color: #333;
-}
-
-.nav-back img,
-.nav-next img {
-  position: relative;
-  min-width: 125%;
-  height: auto;
-  pointer-events: none;
-}
-
-.nav-next img {
-  position: relative;
-  right: 150px; /* Adjust position */
-}
-
-.nav-text {
-  cursor: pointer; /* Make only the text clickable */
   transition: color 0.3s ease;
 }
 
-.nav-text:hover {
-  scale: 1.1; /* Optional hover effect */
-  color: #555; /* Optional hover effect */
+.social-icons a:hover {
+  color: #000;
 }
 
-.footer {
-  margin-top: 100px;
-  background: transparent;
-  padding: 20px;
-  background-color: #f1f1f1;
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .home {
+    padding: 1rem;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  .left-side, .right-side {
+    width: 100%;
+    height: auto;
+  }
+  
+  .right-side {
+    margin-top: 2rem;
+    min-height: 50vh;
+  }
+  
+  .product, .designer {
+    font-size: 4rem;
+  }
+  
+  .main-nav {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .main-nav ul {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .creative-drawing {
+    opacity: 0.7;
+  }
 }
 
-.services {
-  text-align: left;
+@media (max-width: 768px) {
+  .bio-section h2,
+  .bio-section p {
+    font-size: 1.3rem;
+  }
+  
+  .product, .designer {
+    font-size: 3.5rem;
+  }
 }
 
-.services ul {
-  list-style: none;
-  padding: 0;
+@media (max-width: 576px) {
+  .bio-section h2,
+  .bio-section p {
+    font-size: 1.1rem;
+  }
+  
+  .product, .designer {
+    font-size: 2.5rem;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
+
 
 .services li {
   margin: 5px 0;

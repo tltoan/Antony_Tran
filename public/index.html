@@ -40,5 +40,87 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- Ultra-smooth push effect script - focused solely on responsiveness -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for React to fully render
+        setTimeout(() => {
+          console.log('Ultra-smooth push effect loaded');
+          
+          // Track mouse position with RAF for maximum smoothness
+          let mouseX = 0;
+          let mouseY = 0;
+          
+          // Update mouse position immediately on move
+          document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          });
+          
+          // Use requestAnimationFrame for smooth animation
+          function updateShapes() {
+            // Get all shapes
+            const shapes = document.querySelectorAll('.shape');
+            
+            // Process each shape with current mouse position
+            shapes.forEach(shape => {
+              // Get shape position
+              const rect = shape.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              
+              // Calculate distance
+              const dx = centerX - mouseX;
+              const dy = centerY - mouseY;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              
+              // Push effect settings
+              const pushRadius = 250; // Larger radius for earlier response
+              const maxPushStrength = 50; // Stronger push
+              
+              // Push away if close enough
+              if (distance < pushRadius) {
+                // Calculate push force with ultra-smooth falloff
+                // This creates a very natural force field effect
+                const normalizedDistance = 1 - distance / pushRadius;
+                
+                // Apply quadratic easing for super smooth movement
+                const easing = normalizedDistance * normalizedDistance;
+                const pushForce = easing * maxPushStrength;
+                
+                // Calculate push direction
+                const angle = Math.atan2(dy, dx);
+                const pushX = Math.cos(angle) * pushForce;
+                const pushY = Math.sin(angle) * pushForce;
+                
+                // Apply direct transform without any transition delay
+                // for immediate response
+                shape.style.transform = `translate3d(${pushX}px, ${pushY}px, 0) scale(1.1)`;
+                shape.style.opacity = 0.7;
+                
+                // No transition on push for instant response
+                shape.style.transition = 'none';
+              } else {
+                // Check if shape is currently pushed
+                const currentTransform = shape.style.transform;
+                if (currentTransform && currentTransform !== 'none') {
+                  // Return to original state with smooth transition
+                  shape.style.transform = '';
+                  shape.style.opacity = '1';
+                  // Add transition only when returning
+                  shape.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out';
+                }
+              }
+            });
+            
+            // Continue the animation loop
+            requestAnimationFrame(updateShapes);
+          }
+          
+          // Start the animation loop
+          requestAnimationFrame(updateShapes);
+        }, 1000); // Wait only 1 second for React to render
+      });
+    </script>
   </body>
 </html>

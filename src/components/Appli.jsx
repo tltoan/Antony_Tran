@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/ProjectCommon.css";
 import "./styles/Appli.css";
 import Navbar from "./Navbar";
 import researchGoals from "../assets/research-goals.png";
@@ -12,13 +13,14 @@ import protoype from "../assets/appli-prototype.png";
 
 const Appli = () => {
   return (
-    <div className="case-study-page">
+    <div className="appli-container">
       <Navbar />
       {/* Hero Section */}
-      <header className="hero-section">
-        <h1 className="project-title">Mejo 581: Appli</h1>
-        <img src={protoype} alt="Appli Prototype" className="project-image" />
-        <p className="project-summary">
+      <section className="hero-section">
+        <div className="project-year">2024</div>
+        <div className="project-number">02</div>
+        <h1>Appli</h1>
+        <p>
           This project was undertaken as part of my User Research class, where
           we explored the end-to-end process of research, design, and testing to
           develop a new job application website. The goal was to create a
@@ -33,32 +35,20 @@ const Appli = () => {
           often overwhelming experience of applying for jobs, providing users
           with a seamless, intuitive platform tailored to their journey.
         </p>
-        <div className="project-meta-container">
-          <div className="meta-box">
-            <p>
-              <strong>Role:</strong> Lead Designer
-            </p>
-          </div>
-          <div className="meta-box">
-            <p>
-              <strong>Tools:</strong> Figma, Adobe XD
-            </p>
-          </div>
-          <div className="meta-box">
-            <p>
-              <strong>Year:</strong> 2024
-            </p>
-          </div>
-          <div className="meta-box">
-            <p>
-              <strong>Duration:</strong> 4 Weeks
-            </p>
-          </div>
-        </div>
-      </header>
+        <div className="accent-line"></div>
+        <img src={protoype} alt="Appli Prototype" className="hero-image" />
+      </section>
+
+      {/* Meta Section */}
+      <section className="meta-section">
+        <div className="meta-box">Lead Designer</div>
+        <div className="meta-box">Figma, Adobe XD</div>
+        <div className="meta-box">4 Weeks</div>
+        <div className="meta-box">Class Project</div>
+      </section>
 
       {/* Problem Statement */}
-      <section className="problem-section">
+      <section className="content-section">
         <h2>Problem Statement</h2>
         <p>
           We want to understand the specific challenges recent graduates face
@@ -76,7 +66,7 @@ const Appli = () => {
       </section>
 
       {/* Process Section */}
-      <section className="process-section">
+      <section className="content-section">
         <h2>Design Process</h2>
         <p>
           The design process was grounded in a user-centered approach, involving
@@ -133,13 +123,13 @@ const Appli = () => {
           href="https://www.figma.com/design/ZLNHBqNBBhgtnwbGaAwU8c/Prototype?node-id=36-3&t=qfZhRDNiGKnbVwc8-1"
           target="_blank"
           rel="noopener noreferrer"
-          className="figma-button">
+          className="project-link">
           View Prototype
         </a>
       </section>
 
       {/* Results Section */}
-      <section className="results-section">
+      <section className="content-section">
         <h2>Results</h2>
         <p>
           The result of this project culminated in a detailed presentation where
@@ -178,11 +168,10 @@ const Appli = () => {
       </section>
 
       {/* Call-to-Action */}
-      <footer className="cta-section">
-        <a href="/projects" className="cta-link">
+      <footer className="content-section">
+        <a href="/projects" className="project-link">
           View More Projects
         </a>
-        <div></div>
       </footer>
     </div>
   );

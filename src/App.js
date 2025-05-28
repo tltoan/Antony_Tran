@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./components/styles/Common.css"; // Import common styles first
 import "./components/styles/Home.css";
 import Home from "./components/Home";
 import Artworks from "./components/Artworks";
@@ -7,8 +8,9 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Appli from "./components/Appli";
 import Void from "./components/Void";
-import BOV from "./components/BOV";
-import Michelin from "./components/Michelin";
+import Cykle from "./components/Cykle";
+import Sourcerer from "./components/Sourcerer";
+import Ainzpop from "./components/Ainzpop";
 import "./components/styles/Preloader.css";
 import dancing from "./assets/dancing.gif";
 
@@ -52,8 +54,9 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/appli" component={Appli} />
         <Route path="/void" component={Void} />
-        <Route path="/bov" component={BOV} />
-        <Route path="/michelin" component={Michelin} />
+        <Route path="/cykle" component={Cykle} />
+        <Route path="/sourcerer" component={Sourcerer} />
+        <Route path="/ainzpop" component={Ainzpop} />
         <Route path="/projects" component={Projects} />
       </Switch>
     </Router>

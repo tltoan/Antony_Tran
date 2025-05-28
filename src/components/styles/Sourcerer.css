@@ -1,0 +1,456 @@
+/* Sourcerer.css */
+.sourcerer-page {
+  max-width: 1200px;
+  margin: 250px auto;
+  font-family: var(--font-sf);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Solution Image */
+.solution-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.solution-image-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.solution-image-container {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  max-height: none;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.solution-caption {
+  margin: 15px 0 0 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  max-width: 100%;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Hover effects */
+.solution-image-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.solution-image-container:active {
+  transform: scale(0.99);
+}
+
+/* Header Section */
+.sourcerer-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+}
+
+.header-left {
+  width: 45%;
+  border-right: 5px solid #2706b9;
+}
+
+.project-date {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.project-title {
+  color: #0000FF;
+  font-size: 75px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.project-role {
+  font-size: 16px;
+  margin: 0;
+}
+
+.header-right {
+  width: 60%;
+}
+
+.problem-block {
+  margin-left: 15px;
+}
+
+.problem-block h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.problem-block p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Solution Section */
+.solution-section {
+  margin-bottom: 60px;
+}
+
+.solution-section p {
+  max-width: 75%;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.solution-section h2 {
+  margin-top: 0px;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.solution-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.button-row {
+  display: flex;
+  gap: 15px;
+}
+
+.solution-btn {
+  border: none;
+  background: #f1f1f1;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.solution-btn.active {
+  background: #000;
+  color: white;
+}
+
+.try-btn {
+  padding: 8px 20px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.ai-procurement-section {
+  margin-top: 40px;
+}
+
+.ai-procurement-section h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.ai-procurement-section p {
+  font-size: 16px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.get-started-btn {
+  background: #0000FF;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* Demo Video Styles */
+.demo-video-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sourcerer-demo-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.demo-screenshot {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.demo-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.platform-description {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 60px;
+}
+
+/* Features Section */
+.features-section {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.features-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.features-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.features-list li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.features-list li:before {
+  content: "•";
+  color: #0000FF;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.globe-illustration {
+  align-self: center;
+  margin: 30px 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #0000FF;
+}
+
+.globe-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Role Section */
+.role-section {
+  margin-bottom: 60px;
+}
+
+.role-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.role-section p {
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.highlight-box {
+  background: #f8f8f8;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.highlight-box h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Research Section */
+.research-section {
+  margin-bottom: 60px;
+}
+
+.research-intro {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.research-data {
+  display: flex;
+  gap: 30px;
+}
+
+.research-column {
+  flex: 1;
+}
+
+.metric-container {
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+}
+
+.metric-container.blue {
+  background-color: #0000FF;
+}
+
+.metric-container.purple {
+  background-color: #6600cc;
+}
+
+.metric-number {
+  font-size: 48px;
+  margin: 0 0 5px 0;
+}
+
+.metric-label {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+
+.metric-details {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.metric-details li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Demo Section */
+.demo-section {
+  margin-bottom: 60px;
+}
+
+.demo-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.demo-section p {
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.spiral-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.spiral-left, .spiral-right {
+  width: 100px;
+  height: 100px;
+}
+
+/* Reflections Section */
+.reflections-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.reflections-column, .key-features-column {
+  flex: 1;
+}
+
+.reflections-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.reflections-column p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.key-feature-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.key-feature-list li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.key-feature-list li:before {
+  content: "•";
+  color: #0000FF;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.arrow-icon {
+  font-size: 30px;
+  color: #0000FF;
+  margin-top: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 60px;
+  color: #0000FF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.features-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+  

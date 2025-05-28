@@ -61,15 +61,9 @@ const Archive = () => {
           <div
             key={index}
             className="archive-item"
-            onClick={() => openArtwork(artwork)}>
+            onClick={() => openArtwork(artwork)}
+          >
             <img src={artwork.src} alt={artwork.title} />
-            <div className="archive-tag">
-              <h3>{artwork.title}</h3>
-              <p>{artwork.description}</p>
-              <p>
-                <strong>Size:</strong> {artwork.size}
-              </p>
-            </div>
           </div>
         ))}
       </div>

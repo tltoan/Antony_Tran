@@ -1,28 +1,32 @@
 import React, { useState } from "react";
 import "./styles/Recent.css";
+import eye from "../assets/eye.gif";
 import WIP from "../assets/WIP.gif";
 
-const Recent = () => {
-  const recentArtworks = [
-    {
-      src: WIP,
-      title: "Work in Progress",
-      description:
-        "This piece is not for sale, my actual artwork is coming soon!",
-      size: "largee as hell!",
-    },
-  ];
+const recentArtworks = [
+  {
+    src: eye,
+    title: "not done 1",
+    description: "is you cool?",
+    size: "wowza"
+  },
+  {
+    src: WIP,
+    title: "Work in Progress",
+    description: "This piece is not for sale, my actual artwork is coming soon!",
+    size: "largee as hell!"
+  }
+];
 
+const Recent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % recentArtworks.length);
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? recentArtworks.length - 1 : prev - 1));
   };
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + recentArtworks.length) % recentArtworks.length
-    );
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === recentArtworks.length - 1 ? 0 : prev + 1));
   };
 
   return (
